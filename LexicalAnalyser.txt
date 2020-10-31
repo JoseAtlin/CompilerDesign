@@ -11,7 +11,7 @@ int maximum(int x, int y) {
     ever */
     int a = "this" this;
     g == +a + -b * a / b % c != gh;
-    a = bsah++ + cc;
+    a = bsah++ + cc - 4.3 + 0x;
     b = ++bsah + cc;
     if ((ab || cd) && (gh >= hi))
     	pqrs >> 1;
