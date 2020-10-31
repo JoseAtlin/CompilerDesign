@@ -1,0 +1,18 @@
+#include <stdio.h>
+int maximum(int x, int y) {
+	// This will compare 2 numbers
+    if (x > y)
+        return x;
+    else {
+        return y;
+    }
+    /* this should
+    not be considered
+    ever */
+    int a = "this" this;
+    g == +a + -b * a / b % c != gh;
+    a = bsah++ + cc;
+    b = ++bsah + cc;
+    if ((ab || cd) && (gh >= hi))
+    	pqrs >> 1;
+}
