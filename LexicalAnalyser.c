@@ -75,7 +75,7 @@ char* subString(char* str, int left, int right) {
     for (int i = left; i <= right; i++)
         subStr[i - left] = str[i];
     subStr[right - left + 1] = '\0';
-    // printf("%s", subStr);      
+    // printf("%s", subStr);  
     return (subStr);
 } 
   
@@ -101,8 +101,6 @@ void parse(char* str) {
         else if (isDelimiter(str[right]) && left != right || (right == len && left != right)) { 
             char *subStr = subString(str, left, right - 1);
             // printf("%s", subStr);
-            // printf("%c%c", str[left], str[left+1]);
-            // printf("%c%c", str[left-1], str[left-2]);
   
             if (isKeyword(subStr))
                 printf("'%s' IS A KEYWORD\n", subStr);
@@ -130,7 +128,7 @@ void parse(char* str) {
   
 int main() {
     char checker[255] = "";
-    FILE *fp = fopen("check_file.txt", "r");
+    FILE *fp = fopen("LexicalAnalyser.txt", "r");
     int temp = 1;
     int flag = 0;
     while(fgets(checker, 255, fp) != NULL) {
