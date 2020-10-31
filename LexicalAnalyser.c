@@ -89,36 +89,37 @@ void parse(char* str) {
   
         if (isDelimiter(str[right]) && left == right) {
             if (isOperator(str[right]) && isOperator(str[right+1]))
-                printf("'%c%c' IS AN OPERATOR\n", str[right], str[right+1]);
+                printf("'%c%c' : OPERATOR\n", str[right], str[right+1]);
             else if (isOperator(str[right]) && str[right+1] == ' ' && str[right - 1] == ' ')
-                printf("'%c' IS AN OPERATOR\n", str[right]);
-            else if (isOperator(str[right]) && str[right] != ' ' && str[right - 1] == ' ')
-                printf("'%c' IS AN OPERATOR\n", str[right]);
+                printf("'%c' : OPERATOR\n", str[right]);
+            else if (isOperator(str[right]) && isalpha(str[right+1]) && str[right - 1] == ' ')
+                printf("'%c' : OPERATOR\n", str[right]);
 
             right++;
             left = right; 
         }
-        else if (isDelimiter(str[right]) && left != right || (right == len && left != right)) { 
+        else if (isDelimiter(str[right]) && left != right || (right == len && left != right)) {
+            // printf("%c%c", str[right], str[right+2]);
             char *subStr = subString(str, left, right - 1);
-            // printf("%s", subStr);
+            // printf("%s%c%c", subStr, str[right]);
   
             if (isKeyword(subStr))
-                printf("'%s' IS A KEYWORD\n", subStr);
+                printf("'%s' : KEYWORD\n", subStr);
   
             else if (isInteger(subStr)) 
-                printf("'%s' IS AN INTEGER LITERAL\n", subStr); 
+                printf("'%s' : INTEGER LITERAL\n", subStr); 
   
             else if (isFloat(subStr)) 
-                printf("'%s' IS A FLOAT LITERAL\n", subStr);
+                printf("'%s' : FLOAT LITERAL\n", subStr);
 
             else if (isString(subStr))
-                printf("'%s' IS A STRING LITERAL\n", subStr);
+                printf("'%s' : STRING LITERAL\n", subStr);
   
             else if (validIdentifier(subStr) && !isDelimiter(str[right - 1]))
-                printf("'%s' IS A VALID IDENTIFIER\n", subStr);
+                printf("'%s' : VALID IDENTIFIER\n", subStr);
   
             else if (!validIdentifier(subStr) && !isDelimiter(str[right - 1])) 
-                printf("'%s' IS NOT A VALID IDENTIFIER\n", subStr); 
+                printf("'%s' : NOT VALID IDENTIFIER\n", subStr); 
 
             left = right;
         }
