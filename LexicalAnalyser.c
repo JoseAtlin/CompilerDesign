@@ -101,7 +101,7 @@ void parse(char* str) {
         else if (isDelimiter(str[right]) && left != right || (right == len && left != right)) {
             // printf("%c%c", str[right], str[right+2]);
             char *subStr = subString(str, left, right - 1);
-            // printf("%s%c%c", subStr, str[right]);
+            // printf("%s%c", subStr, str[right]);
   
             if (isKeyword(subStr))
                 printf("'%s' : KEYWORD\n", subStr);
